@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Smart Door Lock</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <h1>Smart Door Lock</h1>
+          <p class="tagline">OTP Authentication • Bluetooth / Media-Key Unlock</p>
+        </div>
+        <nav class="main-nav">
+          <a href="/">Home (OTP)</a>
+          <a href="/enter-otp">Enter OTP</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+    <div id="unlock-badge" class="unlock-badge" aria-hidden="true">
+      <div class="badge-inner">UNLOCKED</div>
+    </div>
+    <footer class="container footer">
+      <small>Smart Door Lock System</small>
+    </footer>
+    <script src="/static/main.js"></script>
+  </body>
+</html>

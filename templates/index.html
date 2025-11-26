@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card hero">
+  <div class="left">
+    <h2>Current OTP</h2>
+    <div id="otp" class="otp">----</div>
+    <div class="small">Changes every <strong>15s</strong>. Next change in <span id="remaining">--</span>s</div>
+  </div>
+  <div class="right panel">
+    <h3>Door Status</h3>
+    <div id="door-status">
+      {% if door_locked %}
+        <span class="status-locked">Locked</span>
+      {% else %}
+        <span class="status-unlocked">Unlocked</span>
+      {% endif %}
+    </div>
+    <hr>
+    <h3>Unlock</h3>
+    <p class="small">Use the Bluetooth button or your keyboard's Play/Pause media key to unlock (if available).</p>
+    <div class="controls">
+      <button id="bt-unlock" class="btn">Unlock</button>
+      <button id="toggle-bt" class="btn outline">Toggle Bluetooth</button>
+    </div>
+    <div style="margin-top:8px;"><span id="bt-state" class="small">State: {{ 'Enabled' if bluetooth_enabled else 'Disabled' }}</span></div>
+  </div>
+</section>
+{% endblock %}
